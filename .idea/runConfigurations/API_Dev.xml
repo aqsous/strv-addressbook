@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="API Dev" type="NodeJSConfigurationType" path-to-js-file="src/index.js" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="MONGO_URI" value="mongodb+srv://admin:K6jNezR0dwoXZNWA@cluster0-dpnkr.mongodb.net/test?retryWrites=true&amp;w=majority" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>
