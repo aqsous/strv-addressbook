@@ -25,8 +25,8 @@ npm run test
 ## Documentation
 Documentation available in many options:
 1-Swagger Webpage `{baseUrl}/api/v1/docs`
-1-Swagger JSON File `{baseUrl}/api/v1/jsonDocs` you can use this to import collection in Postman 
+2-Swagger JSON File `{baseUrl}/api/v1/jsonDocs` you can use this to import collection in Postman 
 
 ## Demo
 Demo deployed to Heroku 
-You can check it here: https://strv-addressbook-qsous-adham.herokuapp.com
+You can check it [here](https://strv-addressbook-qsous-adham.herokuapp.com)
