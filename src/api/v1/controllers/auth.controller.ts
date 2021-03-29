@@ -1,13 +1,14 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import httpStatus from 'http-status';
 import * as service from '../services/internal/auth.service';
 import { create as createUser, checkDuplicateEmail } from '../services/internal/users.service';
+import CustomRequest from '../utils/CustomRequest';
 
 /**
  * Returns jwt token if registration was successful
  * @public
  */
-export const register = async (req: Request, res: Response, next: NextFunction) => {
+export const register = async (req: CustomRequest, res: Response, next: NextFunction) => {
   try {
     const user = await createUser(req.body);
     const token = await service.generateTokenResponse(user, service.getAccessToken(user));
@@ -22,7 +23,7 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
  * Returns jwt token if valid username and password is provided
  * @public
  */
-export const login = async (req: Request, res: Response, next: NextFunction) => {
+export const login = async (req: CustomRequest, res: Response, next: NextFunction) => {
   try {
     const userData = await service.findAndGenerateToken(
       req.body.email, req.body.password,
@@ -41,7 +42,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
  * Returns a new jwt when given a valid refresh token
  * @public
  */
-export const refresh = async (req: Request, res: Response, next: NextFunction) => {
+export const refresh = async (req: CustomRequest, res: Response, next: NextFunction) => {
   try {
     const { email, refreshToken } = req.body;
     const refreshObject = await service.getRefreshToken(
@@ -66,7 +67,7 @@ export const refresh = async (req: Request, res: Response, next: NextFunction) =
  * Returns a new jwt when given a valid refresh token
  * @public
  */
-export const me = async (req: Request, res: Response, next: NextFunction) => {
+export const me = async (req: CustomRequest, res: Response, next: NextFunction) => {
   try {
     res.json(req.user);
   } catch (error) {
