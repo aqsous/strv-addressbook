@@ -11,6 +11,9 @@ import APIError from '../../utils/APIError';
 export const getRefreshToken = async (email: string, token: string) => {
   const currentRefreshToken = await RefreshTokenModel.findOne({
     email, token,
+    expires: {
+      $lte: new Date(),
+    },
   });
   return currentRefreshToken;
 };
