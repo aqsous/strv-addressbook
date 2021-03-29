@@ -13,7 +13,7 @@ export const getRefreshToken = async (email: string, token: string) => {
     email,
     token,
     expires: {
-      $lte: new Date(),
+      $gte: new Date(),
     },
   });
   return currentRefreshToken;

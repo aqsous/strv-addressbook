@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../src/index');
 
-describe('Auth Endpoints', () => {
+describe('Endpoints', () => {
   // beforeAll(done => {
   //   process.env.NODE_ENV = 'test';
   // });
