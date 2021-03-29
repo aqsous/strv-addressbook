@@ -10,7 +10,8 @@ import APIError from '../../utils/APIError';
 
 export const getRefreshToken = async (email: string, token: string) => {
   const currentRefreshToken = await RefreshTokenModel.findOne({
-    email, token,
+    email,
+    token,
     expires: {
       $lte: new Date(),
     },
@@ -19,7 +20,7 @@ export const getRefreshToken = async (email: string, token: string) => {
 };
 
 export const generateRefreshToken = async (user: UserDocument) => {
-  const userId = user._id;
+  const userId = user.id;
   const { email } = user;
   const token = `${userId}.${crypto.randomBytes(40).toString('hex')}`;
   const expires = moment().add(365, 'days').toDate();

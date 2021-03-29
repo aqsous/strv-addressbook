@@ -24,8 +24,5 @@ module.exports = {
     'react',
   ],
   rules: {
-    'no-underscore-dangle': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
   },
 };
