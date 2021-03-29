@@ -1,14 +1,14 @@
-// const path = require('path');
-// const dotenv = require('dotenv-safe');
+const path = require('path');
+const dotenv = require('dotenv-safe');
 
 export const env = process.env.NODE_ENV || 'development';
 
-// if (env === 'development') {
-//   dotenv.config({
-//     path: path.join(__dirname, '../../.env'),
-//     sample: path.join(__dirname, '../../.env.dev'),
-//   });
-// }
+if (env === 'development') {
+  dotenv.config({
+    path: path.join(__dirname, '../../.env'),
+    sample: path.join(__dirname, '../../.env.dev'),
+  });
+}
 
 export const port: number = parseInt(process.env.PORT || '1337', 10);
 export const jwtSecret: string = process.env.JWT_SECRET || 'secret';

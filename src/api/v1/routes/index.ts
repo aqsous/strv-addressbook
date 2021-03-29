@@ -27,8 +27,8 @@ const swaggerOptions = {
       },
     ],
     info: {
-      title: 'Freelancination API',
-      description: 'Freelancination API Information',
+      title: 'STRV Addressbook API',
+      description: 'STRV Addressbook API',
       contact: {
         name: 'Adham Goussous',
         email: 'adham.goussous@gmail.com',
