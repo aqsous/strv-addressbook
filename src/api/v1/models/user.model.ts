@@ -9,7 +9,7 @@ import APIError from '../utils/APIError';
 
 const { env, jwtSecret, jwtExpirationInterval } = require('../../../config/vars');
 
-const roles = ['user', 'staff', 'admin'];
+export const roles = ['user', 'staff', 'admin'];
 
 export interface IUser {
   email: string;

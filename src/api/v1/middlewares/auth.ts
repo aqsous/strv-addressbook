@@ -4,7 +4,7 @@ import { NextFunction, Request, Response } from 'express';
 
 import APIError from '../utils/APIError';
 
-const User = require('../models/user.model');
+import { roles as allRoles } from '../models/user.model';
 
 export const ADMIN = 'admin';
 export const LOGGED_USER = '_loggedUser';
@@ -52,7 +52,7 @@ export const handleJWT = (
   return next();
 };
 
-export const authorize = (roles = User.roles) => (
+export const authorize = (roles = allRoles) => (
   req: Request,
   res: Response,
   next: NextFunction,

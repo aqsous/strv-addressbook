@@ -14,17 +14,17 @@ router.param('userId', controller.load);
 
 router
   .route('/')
-  .get(authorize(ADMIN), validate(userValidation.listUsers), controller.list)
-  .post(authorize(ADMIN), validate(userValidation.createUser), controller.create);
+  .get(authorize([ADMIN]), validate(userValidation.listUsers), controller.list)
+  .post(authorize([ADMIN]), validate(userValidation.createUser), controller.create);
 
 router
   .route('/changePassword')
-  .post(authorize(LOGGED_USER), controller.changePassword);
+  .post(authorize([LOGGED_USER]), controller.changePassword);
 
 router
   .route('/:userId')
-  .get(authorize(ADMIN), controller.get)
-  .patch(authorize(ADMIN), validate(userValidation.updateUser), controller.update)
-  .delete(authorize(ADMIN), controller.remove);
+  .get(authorize([ADMIN]), controller.get)
+  .patch(authorize([ADMIN]), validate(userValidation.updateUser), controller.update)
+  .delete(authorize([ADMIN]), controller.remove);
 
 export default router;

@@ -2,7 +2,7 @@ import { ExtractJwt, Strategy as JwtStrategy, VerifiedCallback } from 'passport-
 
 import { jwtSecret } from './vars';
 
-const { UserModel } = require('../api/v1/models/user.model');
+import { UserModel } from '../api/v1/models/user.model';
 
 const jwtOptions = {
   secretOrKey: jwtSecret,

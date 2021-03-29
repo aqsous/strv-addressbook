@@ -33,6 +33,6 @@ const router = express.Router();
  */
 router
   .route('/')
-  .post(authorize(LOGGED_USER), validate(contactValidation.createContact), controller.create);
+  .post(authorize([LOGGED_USER]), validate(contactValidation.createContact), controller.create);
 
 export default router;
