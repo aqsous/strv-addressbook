@@ -6,7 +6,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start:dev": "node --require ts-node/register src/index.ts",
-    "build": "rimraf ./build && tsc",
+    "build": "tsc",
     "start": "npm run build && node build/index.js",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000"
   },
