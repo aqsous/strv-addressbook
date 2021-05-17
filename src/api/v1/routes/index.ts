@@ -27,8 +27,8 @@ const swaggerOptions = {
       },
     ],
     info: {
-      title: 'STRV Addressbook API',
-      description: 'STRV Addressbook API',
+      title: 'Phonebook API',
+      description: 'Phonebook API',
       contact: {
         name: 'Adham Goussous',
         email: 'adham.goussous@gmail.com',
