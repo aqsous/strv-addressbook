@@ -5,6 +5,7 @@ import * as path from 'path';
 
 import routes from '../api/v1/routes';
 import { jwtStrategy } from './passport';
+import { serverUrl } from './vars';
 
 const error = require('../api/v1/middlewares/error');
 
@@ -14,7 +15,29 @@ const error = require('../api/v1/middlewares/error');
  */
 const app = express();
 
-app.use(cors);
+// options for cors midddleware
+const options: cors.CorsOptions = {
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type',
+    'Accept',
+    'X-Access-Token',
+  ],
+  credentials: true,
+  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  origin: serverUrl,
+  preflightContinue: false,
+};
+
+// use cors middleware
+app.use(cors(options));
+
+// add your routes
+
+// enable pre-flight
+// app.options('*', cors(options));
+
 app.set('view engine', 'ejs');
 
 // parse body params and attache them to req.body
