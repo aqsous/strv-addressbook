@@ -14,7 +14,7 @@ const error = require('../api/v1/middlewares/error');
  */
 const app = express();
 
-app.use(cors());
+app.use(cors);
 app.set('view engine', 'ejs');
 
 // parse body params and attache them to req.body
