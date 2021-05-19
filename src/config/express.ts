@@ -1,5 +1,6 @@
 import express from 'express';
 import passport from 'passport';
+import cors from 'cors';
 import * as path from 'path';
 
 import routes from '../api/v1/routes';
@@ -13,6 +14,7 @@ const error = require('../api/v1/middlewares/error');
  */
 const app = express();
 
+app.use(cors());
 app.set('view engine', 'ejs');
 
 // parse body params and attache them to req.body
